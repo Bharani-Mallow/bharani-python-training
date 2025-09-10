@@ -1,0 +1,15 @@
+[project]
+name = "questions-preparation"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi-pagination>=0.14.1",
+    "fastapi[standard]>=0.116.1",
+    "pydantic-settings>=2.10.1",
+    "sqlalchemy>=2.0.43",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+]
