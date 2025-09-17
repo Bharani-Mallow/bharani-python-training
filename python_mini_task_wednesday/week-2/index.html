@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    
+<title>ACCOUNT LOGIN</title>
+</head>
+    <body>
+        <script>
+            function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            }
+
+            function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            }
+        </script>
+        <div class="login-container">
+            <h1>ACCOUNT LOGIN</h1>
+            <form>
+                <div class="form-group">
+                    <label>USERNAME</label>
+                    <input type="text">
+                </div>
+
+                <div class="form-group">
+                    <label>PASSWORD</label>
+                    <input type="password">
+                </div>
+
+                <div class="form-options">
+                    <div class="remember-me">
+                    <input type="checkbox">
+                    <label>Remember Me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+        
+                <button type="submit" class="login-btn">LOG IN</button>
+
+            </form>
+            <div class="openbtn">
+                <div id="mySidebar" class="sidebar">
+                    <h1>REGISTER ACCOUNT</h1>  
+                    <form>
+                    <button class="closebtn" onclick="closeNav()">X</button>  
+                    <div class="form-group">
+                        <label>USERNAME</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label>PASSWORD</label>
+                        <input type="password">
+                    </div>
+                    <div class="form-group">
+                        <label>CONFIRM PASSWORD</label>
+                        <input type="password">
+                    </div>
+                    <div class="form-group">
+                        <label>EMAIL ADDRESS</label>
+                        <input type="password">
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

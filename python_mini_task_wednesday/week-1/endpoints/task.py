@@ -46,8 +46,8 @@ def get(request: Request, task_id: int):
     try:
         db: Session = request.state.db
         task = db.query(Task).get(task_id)
-        if 
     except Exception as error:
+        logger.debug(error)
 
 
 
