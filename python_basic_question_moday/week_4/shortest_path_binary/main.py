@@ -8,10 +8,10 @@ def main():
 def solve_problem(grid):
     """
     Shortest Path in Binary Matrix Problem
-    
+
     Args:
         grid: List[List[int]] - binary matrix of 0s (open) and 1s (blocked)
-        
+
     Returns:
         int - length of the shortest clear path, or -1 if no path exists
     """
@@ -20,41 +20,44 @@ def solve_problem(grid):
     # WRITE YOUR SOLUTION CODE BELOW
     # ================================
     print("grid ====> ", grid)
-   
 
     n = len(grid)
     m = len(grid[0])
-    print("n ====> ", n)
-    print("m ====> ", m)
+
     if grid[0][0] == 1:
         return -1
     if grid[n - 1][m - 1] == 1:
         return -1
     if n == 1 and m == 1:
         return 1
-    
-    step = 0
-    current_position = grid[0][0]
-    for i in range(n):
-        current_row = i
-        if i == current_position[0]:
-            for j in range(m):
-                if j == current_position[1]:
-                    current_column = j
-                    current_position = grid[current_row][current_column]
-                    if grid[current_row+1][current_column+1] == 0:
-                        step += 1
-                        current_position = grid[current_row+1][current_column+1]
-                    if grid[current_row][current_column+1] == 0:
-                        step += 1
-                        current_position = grid[current_row][current_column+1]
-                    if grid[current_row+1][current_column] == 0:
-                        step += 1
-                        current_position = grid[current_row+1][current_column]
-                        step += 1
+
+    step = 1
+    current_position = [0, 0]
+    destination = [n - 1, m - 1]
+    print("current_position ====> ", current_position)
+    i, j = 0, 0
+    while current_position != destination:
+        if i + 1 < n and j + 1 < m and grid[i + 1][j + 1] == 0:
+            current_position = [i + 1, j + 1]
+            i, j = i + 1, j + 1
+            step += 1
+
+        elif i < n and j + 1 < m and grid[i][j + 1] == 0:
+            current_position = [i, j + 1]
+            i, j = i, j + 1
+            step += 1
+
+        elif i + 1 < n and j < m and grid[i + 1][j] == 0:
+            current_position = [i + 1, j]
+            i, j = i + 1, j
+            step += 1
+
+        else:
+            return -1
+
     return step
-    
-    
+
+    # return step
 
     # ================================
     # END OF SOLUTION CODE
